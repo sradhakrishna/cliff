@@ -58,7 +58,7 @@ class InteractiveApp(cmd2.Cmd):
         # since it already has the logic for executing
         # the subcommand.
         line_parts = shlex.split(line.parsed.raw)
-        self.parent_app.run_subcommand(line_parts)
+        return self.parent_app.run_subcommand(line_parts)
 
     def completenames(self, text, *ignored):
         """Tab-completion for command prefix without completer delimiter.
